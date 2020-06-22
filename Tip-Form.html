@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style4.css">
+        <script>
+            var val; 
+            function Value() {
+                val = service.value;
+            }
+            function calculate(){
+                let x = +document.getElementById("input").value;
+                let y = +document.getElementById("person").value;  
+                let display; 
+                if(x == 0 ){
+                    document.getElementById("error").innerHTML = "Enter the Amount";
+                }
+                else if(y == 0){
+                    document.getElementById("error").innerHTML = "Enter the number of people sharing";
+                }
+                else if(val == "0" || val == undefined){
+                    document.getElementById("error").innerHTML = "Choose your service";
+                }
+                else{ 
+                if (val == 1){
+                   display = 20/100*x;
+                }
+                else if(val == 2){
+                    display = 10/100*x;
+                }
+                else{
+                    display = 2/100*x;
+                }
+                let total = display + x;
+                let eachperson = total / y ;
+                document.getElementById("show").innerHTML ="Tip Amount $" + display + "<br>" + "Total Amount $" + total + "<br>" + "Each Persons Owes $" +  eachperson;
+                }
+            }
+
+
+        </script>
+
+    </head>
+    <body>
+       
+            <div class="container col-sm-6 mx-auto ">
+                <div id="error">
+                    <p></p>
+                </div>
+                <h1 id="head" > TIP CALCULATOR </h1>
+                <div class="mx-auto">
+                <div id="body"> 
+
+                        <div>
+                            <p> How Much Was Your Bill? </p>
+                            <input id="input" type="number" required>
+                    
+                            <p>How Many People Sharing this Bill ?</p>
+                            <input id="person" type = "number" required>
+                        
+                            <p>How Was Your Service?</p>
+                            <select id="service" onchange="Value()" required >
+                                <option value="0" >Choose..</option>
+                                <option value="1">Great - 20%</option>
+                                <option value="2">Good - 10%</option>
+                                <option value="3">Bad - 2%</option>
+                            </select>
+                        </div>
+                        <div id="button">
+                            <button onclick="calculate()"> Calculate </button>
+                        </div>
+                </div>
+                    <div id="show">
+                        <p id="dis"> </p>
+                        <p id="total"> </p>
+                        <p id="each"> </p>
+                    </div>
+                    
+                </div>
+            </div>
+        
+    </body>
+</html>

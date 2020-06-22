@@ -1,0 +1,40 @@
+body{
+    background-color: lightBlue;
+    
+}
+#head{
+    background-color: rgb(61, 61, 167);
+    color: white;
+    margin: 0px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    text-align: center;
+}
+#body{
+    background-color: white;
+    height: 300px;
+    padding-left: 23px;
+    padding-right: 35px;
+}
+
+input{
+    width: 100%;
+    
+}
+select{
+    width: 100%;
+}
+#button{
+    text-align: center;
+    margin-top: 27px;
+}
+button{
+    width: 100%;
+    background-color: rgb(61, 61, 167) ;
+    color: white;
+}
+#show{
+    background-color: white;
+    text-align: center;
+  
+}
